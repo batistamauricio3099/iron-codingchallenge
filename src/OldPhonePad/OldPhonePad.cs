@@ -1,5 +1,6 @@
-namespace OldPhonePad;
 using System.Text;
+
+namespace OldPhonePad;
 
 public static class PhonePad
 {
