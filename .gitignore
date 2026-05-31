@@ -21,6 +21,8 @@ project.lock.json
 
 # Coverage
 coverage-output/
+**/TestResults/
+*.cobertura.xml
 
 # OS
 .DS_Store
