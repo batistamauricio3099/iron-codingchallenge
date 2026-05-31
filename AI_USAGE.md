@@ -10,17 +10,19 @@ Here is an honest breakdown of what I asked and what I did myself.
 **Project setup**
 > "Help me create the base structure for this project — file folders, files that I would need."
 
-The AI scaffolded the .NET solution, created the class library and xUnit test project,
-and wired up the project references.
+The AI scaffolded the .NET solution, created the class library and xUnit test project,and wired up the project references.
 
 **Understanding the algorithm**
-> "I imagine it would be a nested if/else or a foreach and I would need a Dictionary . Here is my thought process..."
+> "My plan is:
+Build a dictionary that maps numbers to their respective keys, char for the keys and string for the letters. A key map.
+Then for the class method I'm thinking something like: a char variable to track the current key and an integer counter to track how many times the button has been pressed, called num.
+foreach i in input: if c = # end the process, if c = key then num++ else key = c and num = 1
+How can I refine the logic further?"
 
-I shared my initial thinking in pseudocode. The AI helped me understand why a simple switch was not enough and walked me through.
-I had to understand it before it was written.
+I shared my initial thinking in pseudocode and used AI to identify gaps in my logic before writing the actual code.
 
 **Test cases**
-> "Help me create test cases."
+> "I'll share with you my test plan and test case design document. Help me create test cases."
 > "What other test cases are worth doing?"
 > "What about when the user enters nothing?"
 
@@ -28,7 +30,6 @@ I asked for tests in stages. The AI suggested cases and explained why each one w
 valuable. I decided which ones to add.
 
 **Documentation**
-> "Create a document about how the tests helped improve the code."
 > "Create a README."
 > "Create this AI usage file."
 
@@ -37,10 +38,8 @@ valuable. I decided which ones to add.
 ## What I did myself
 
 - Read and understood the challenge requirements
-- Formed an initial approach before asking for implementation help
 - Asked questions at each step to understand what was being built and why
 - Chose which test cases to add based on what made sense to me
-- Caught that one failed test was a mistake in the test itself, not the code
 - Can explain every part of the code and defend it in a conversation
 
 ---
