@@ -22,6 +22,9 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
+      - name: Check for vulnerable dependencies
+        run: dotnet list package --vulnerable --include-transitive
+
       - name: Check code formatting
         run: dotnet format --verify-no-changes
 
