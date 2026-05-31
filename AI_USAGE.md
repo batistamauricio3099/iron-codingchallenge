@@ -14,7 +14,7 @@ The AI scaffolded the .NET solution, created the class library and xUnit test pr
 and wired up the project references.
 
 **Understanding the algorithm**
-> "I imagine it would be a nested if/else or a switch. Here is my thought process..."
+> "I imagine it would be a nested if/else or a foreach and I would need a Dictionary . Here is my thought process..."
 
 I shared my initial thinking in pseudocode. The AI helped me understand why a simple switch was not enough and walked me through.
 I had to understand it before it was written.
