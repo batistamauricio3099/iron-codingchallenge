@@ -22,11 +22,24 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
+      - name: Check code formatting
+        run: dotnet format --verify-no-changes
+
       - name: Build
         run: dotnet build --no-restore --configuration Release
 
-      - name: Run tests
-        run: dotnet test --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
+      - name: Run tests with coverage
+        run: dotnet test --no-build --configuration Release --collect:"XPlat Code Coverage" --logger "trx;LogFileName=test-results.trx"
+
+      - name: Generate coverage report
+        uses: danielpalme/ReportGenerator-GitHub-Action@5
+        with:
+          reports: "**/coverage.cobertura.xml"
+          targetdir: coverage-report
+          reporttypes: Html;TextSummary
+
+      - name: Print coverage summary
+        run: cat coverage-report/Summary.txt
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -34,3 +47,10 @@ jobs:
         with:
           name: test-results
           path: "**/test-results.trx"
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage-report/
