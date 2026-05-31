@@ -1,4 +1,5 @@
 namespace OldPhonePad;
+using System.Text;
 
 public static class PhonePad
 {
@@ -18,9 +19,10 @@ public static class PhonePad
 
     public static string OldPhonePad(string input)
     {
+        // Validate input
         ArgumentNullException.ThrowIfNull(input);
 
-        var result = new System.Text.StringBuilder();
+        var result = new StringBuilder();
         char currentKey = '\0';
         int pressCount = 0;
 
@@ -67,7 +69,7 @@ public static class PhonePad
         return result.ToString();
     }
 
-    private static void CommitKey(System.Text.StringBuilder result, char key, int presses)
+    private static void CommitKey(StringBuilder result, char key, int presses)
     {
         if (presses == 0 || !KeyMap.TryGetValue(key, out string? letters))
             return;
