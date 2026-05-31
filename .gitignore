@@ -19,6 +19,9 @@ project.lock.json
 # VS Code
 .vscode/
 
+# Coverage
+coverage-output/
+
 # OS
 .DS_Store
 Thumbs.db
